@@ -4,9 +4,10 @@ box-sizing: border-box;
 
 body{
     box-sizing: inherit;
-    margin: 0;
+    margin: 0 auto;
     font-family: 'El-messiri', 'Poppins', sans-serif;
-     
+     max-width: 1200px;
+    
 }
 
 html{
@@ -32,7 +33,7 @@ img{
 }
 nav{
     display: flex;
-    flex-wrap: wrap;
+     
     justify-content: space-between;
     align-items: center;
     margin: 2em 5em;
@@ -53,10 +54,13 @@ nav{
     height: 30px;
     margin-left: 6px;
 }
+.nav-toggle{
+    display: none;
+}
 nav li {
     display: inline-block;
     list-style: none;
-    margin-right: 2em;
+    margin-right: 1em;
 }
 
 .container{
@@ -68,7 +72,7 @@ nav li {
     display: flex;
     align-items: center;
     border: 1px solid black;
-    
+    font-size: clamp(1rem, 0.8rem + 1vw, 3rem);
 }
 .col{
     border: 1px solid black;
@@ -77,7 +81,7 @@ nav li {
     
 }
 .col + .col{
-    margin-left: 3em;
+    margin-left: 1em;
 }
 .banner img{
     object-fit: cover;
@@ -111,7 +115,7 @@ nav li {
   
 }
 .services .col{
-    height: 300px;
+    height: 330px;
     background-color: #2a592f;
     color: #fff;
     padding: 1.5em;
@@ -141,7 +145,7 @@ nav li {
     align-self: flex-start;
 }
 .testimonials .col{
-     
+    height: 400px;
     max-height: 500px;
     background-color: #fff;
     color: #2a592f;
@@ -181,9 +185,14 @@ nav li {
     list-style: none;
     color: #000;
     font-weight: 200;
+    font-size: .8rem;
 }
 .footer .row{
 align-items: flex-start;
+ 
+}
+.footer .col+ .col{
+    margin-left: 1em;
 }
 .end{
     display: flex;
@@ -200,4 +209,60 @@ align-items: flex-start;
 }
 .copyright{
     margin: 0 auto;
+}
+.reduce{
+    font-size: 1.2rem;
+}
+.reduce img{
+    width: 15px;
+    height: 15px;
+}
+
+@media screen and (max-width: 837px) {
+    body{
+        max-width: 600px;
+   
+    }
+    .nav-toggle{
+        display: block;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+
+    }
+    .container{
+        width: 100%;
+        padding: 1em;
+    }
+    .row{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .col{
+        width: 100%;
+      
+    }
+    .col+ .col{
+        margin-left: 0;
+        margin-top: 2em;
+    }
+    .end{
+        flex-direction: column;
+        
+    }
+    .copyright{
+        text-align: center;
+        margin-top: 2em;
+    }
+     
+    .footer .col+ .col{
+        margin-left: 0;
+        margin-top: 1em;
+    }
 }
